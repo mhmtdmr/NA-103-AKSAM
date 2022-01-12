@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>JS 1</h1>
+    <script>
+        "use strict"; // Güncel JS versiyonunu kullanmak zorunludur.
+
+        // Yorum: tek satır
+        /*
+            Çoklu
+            Satır
+            Yorum
+        */
+// let message = "Halo Worlden"
+        // alert(message);
+        // message = 1988
+        // alert(message);
+
+        // Number : tam,ondalıklı (-((2 üzeri 53)-1) -> +((2 üzeri 53-1)))
+        // BigInt : daha büyük sayılar için.
+        // String : "asdasdasd"
+        // Boolean: true/false
+        // let isGreater = 4>1; // true
+        // null: yokluk,nothing,empty
+        // // undefined: value is not assigned
+        // let age;
+        // alert(age); // undefined
+
+
+        // typeof
+
+        // typeof undefined // "undefined"
+
+        // typeof 0 // "number"
+
+        // typeof 10n // "bigint"
+
+        // typeof true // "boolean"
+
+        // typeof "foo" // "string"
+
+        // typeof Symbol("id") // "symbol"
+
+        // typeof Math // "object"  (1)
+
+        // typeof null // "object"  (2)
+
+        // typeof alert // "function"  (3)
+
+
+                 ///////////////////////////////
+        //// Type Conversations    ////
+        ///////////////////////////////  
+
+        // // HedefTip(kaynakVeri) //
+
+        // Number()
+        // Boolean()
+        // String()
+
+        // let sayi = prompt("sayı giriniz"); // Kullanıcıdan sayı al değişkene ata. 
+        // alert(typeof sayi) // string
+        // sayi = Number(sayi)
+        // alert(typeof sayi) // numbers
+
+        // let sayi1 = 45;
+        // let sayi2 = 115;
+        // let toplam = sayi1 + sayi2;
+        // console.log("sayı1:"+sayi1)
+        // console.log("sayı2:"+sayi2)
+        // console.log("toplam:"+toplam)
+
+        // let sayi = "199";
+        // console.log("sayi:"+typeof sayi);
+        // sayi = parseInt(sayi);
+        // console.log("sayi:"+typeof sayi);
+        // sayi = "199.5";
+        // sayi = parseInt(sayi);
+        // console.log("sayi:"+sayi);
+        // let sayi3 = Number("a");
+        // sayi3 = parseInt("111");
+        // console.log(sayi3);
+
+
+
+        ///////////////////////////////
+        //// alert-prompt-confirm  ////
+        ///////////////////////////////    
+
+        // let isim = prompt("İsim","");
+        // // alert(isim);
+        // console.log(isim);
+
+        // let result = confirm("Mola verelim mi?");
+        // console.log(result)
+
+///////////////////////////////
+        //// Logical Operators     ////
+        /////////////////////////////// 
+        const pi = 3.14; // sabit
+        // pi = 3
+        // let a = false;
+        // let b = false;
+        // let orOperator = a || b; // a ve b 'den en az 1 tanesi true ise true
+        // console.log("a : "+a);
+        // console.log("b : "+b);
+        // console.log("orOperator : "+orOperator);
+
+
+        // let c = true;
+        // let d = false;
+        // let andOperator = c && d;// c ve d 'den 2 tanesi de true ise 
+        // console.log("c : "+c);
+        // console.log("d : "+d);
+        // console.log("andOperator : "+andOperator);
+
+        // let state;
+        // console.log(state)
+        // let notState = !state; // state'in tersi değeri verir.
+
+        // let msg = "Boğa";
+        // let booleanMsg = !!msg;  // Boolean tipine dönüştürür.
+        // console.log("booleanMsg : " + booleanMsg)
+
+        /*
+A falsy value is something which evaluates to FALSE, for instance when checking a variable. There are only six falsey values in JavaScript: undefined, null, NaN, 0, "" (empty string), and false of course.
+        */
+
+        /*
+            "" + 1 + 0 = "10" // (1)
+            "" - 1 + 0 = -1 // (2)
+            true + false = 1
+            6 / "3" = 2
+            "2" * "3" = 6
+            4 + 5 + "px" = "9px"
+            "$" + 4 + 5 = "$45"
+            "4" - 2 = 2
+            "4px" - 2 = NaN
+            7 / 0 = Infinity
+            " -9  " + 5 = " -9  5" // (3)
+            " -9  " - 5 = -14 // (4)
+            null + 1 = 1 // (5)
+            undefined + 1 = NaN // (6)
+        */
+
+
+        ///////////////////////////////
+        ////          Loops        ////
+        /////////////////////////////// 
+
+        // let counter = 1
+        // while(counter<=5)
+        // {
+        //     console.log(counter + ". Merhaba")
+        //     // counter += 1
+        //     counter++
+        // }
+
+        // do {
+        // // loop body
+        // } while (condition);
+
+
+        
+        // for(let i=0;i<=4;i++)
+        // {
+        //     if(i==2)
+        //     {
+        //         continue;
+        //     }
+        //     else if(i==4)
+        //     {
+        //         break;
+        //     }
+        //     else
+        //     {
+        //         console.log(i+". Dünya");
+        //     }
+        // }
+
+        // for(let i = 1; i<=10;i++)
+        // {
+        //     if(i==3)
+        //     {
+        //         console.log("En sevdiğim rakam : "+i);
+        //         continue;
+        //     }
+        //     console.log(i);
+        // }
+
+
+         ///////////////////////////////
+        ////         Arrays        ////
+        /////////////////////////////// 
+        
+    //     let arr = new Array();
+    //     let arr2 = [];
+    //     let fruits = ["Apple", "Orange", "Plum"];
+
+    //     console.log(fruits[1])
+
+    //     fruits[1] = "Banana"; // değiştirme
+    //     fruits[3] = "Strawberry"; // ekleme
+    //     console.log(fruits[1])
+    //     console.log(fruits[2])
+    //     console.log(fruits)
+
+    //     console.log(fruits.pop()) // dizideki son elemanı al.
+    //     console.log(fruits) // diziyi yazdır
+    //     fruits.push("Kiraz"); // Diziye Kiraz ekle
+    //     console.log(fruits) // diziyi yazdır.
+    //     /*
+    //         splice(start)
+    //         splice(start, deleteCount)
+    //         splice(start, deleteCount, item1)
+    //         splice(start, deleteCount, item1, item2, itemN)
+    //     */
+    // //    fruits.splice(1,1) // banana sil.
+    //    fruits.splice(1,1,"Muz","Karpuz",1988)
+
+    //    let muzIndex = fruits.indexOf("Muz") // Muz un indeksini bul
+    //    fruits.splice(muzIndex,1) // Silmede kullan
+
+    //    console.log(fruits)
+
+
+    // new Date().toLocaleString();
+    // "12.01.2022 18:55:16"
+
+
+            ///////////////////////////////
+        ////       Iterable        ////
+        /////////////////////////////// 
+        
+        // let str = "asd";
+        // let iterator = str[Symbol.iterator]();
+        // while(true)
+        // {
+        //     let it = iterator.next();
+        //     if(it.done) // iterator içindeki veriler bitti ise
+        //     {
+        //         break;
+        //     }
+        //     console.log(it.value);
+        // }
+
+        let notlar = [10,20,40,80];
+        // let iterNotlar = notlar[Symbol.iterator]();
+        // while(true)
+        // {
+        //     var eleman = iterNotlar.next();
+        //     if(eleman.done)
+        //     {
+        //         break;
+        //     }
+        //     console.log(eleman.value)
+        // }
+
+        // for(let eleman of notlar)
+        // {
+        //     console.log(eleman);
+        // }
+
+        // notlar.forEach(element => {
+        //     console.log(element);
+        // });
+
+        //         // SWITCH CASE
+        // let a = 2 + 2;
+
+        // switch (a) {
+        // case 3:
+        //     console.log( 'Too small' );
+        //     break;
+        // case 4:
+        //     console.log( 'Exactly!' );
+        //     break;
+        // case 5:
+        //     console.log( 'Too big' );
+        //     break;
+        // default:
+        //     console.log( "I don't know such values" );
+        // }
+
+
+        ///////////////////////////////
+        ////       Functions       ////
+        /////////////////////////////// 
+
+        function name(param1,param2)
+        {
+            //body
+        }
+
+        // // tanımladık.
+        // function sum(a,b)
+        // {
+        //     alert(a+b);
+        // }
+
+        // function sayHı()
+        // {
+        //     alert("Hi");
+        // }
+
+        
+        // function returnSum(a,b)
+        // {
+        //     return (a+b);
+        // }
+
+        // // çağırdık.
+        // sum(15,14);
+        // sayHı();
+        // alert(returnSum(9,9));
+
+        
+// 4 işlem için 1'er fonskyion tanımlayın.
+// Klavyeden alınan sayıları bir object'e ekleyin.
+//     let sayilar = {s1:15,s2:5}
+//     bu dizideki her bir elemanı 4 farklı işlem fonksiyonuna gönderip sonucu console da yazdırın.
+
+
+
+    </script>
+</body>
+</html>

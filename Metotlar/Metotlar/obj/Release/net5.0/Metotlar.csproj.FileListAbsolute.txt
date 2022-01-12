@@ -1,0 +1,16 @@
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\bin\Release\net5.0\Metotlar.exe
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\bin\Release\net5.0\Metotlar.deps.json
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\bin\Release\net5.0\Metotlar.runtimeconfig.json
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\bin\Release\net5.0\Metotlar.runtimeconfig.dev.json
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\bin\Release\net5.0\Metotlar.dll
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\bin\Release\net5.0\ref\Metotlar.dll
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\bin\Release\net5.0\Metotlar.pdb
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\obj\Release\net5.0\Metotlar.csproj.AssemblyReference.cache
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\obj\Release\net5.0\Metotlar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\obj\Release\net5.0\Metotlar.AssemblyInfoInputs.cache
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\obj\Release\net5.0\Metotlar.AssemblyInfo.cs
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\obj\Release\net5.0\Metotlar.csproj.CoreCompileInputs.cache
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\obj\Release\net5.0\Metotlar.dll
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\obj\Release\net5.0\ref\Metotlar.dll
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\obj\Release\net5.0\Metotlar.pdb
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metotlar\obj\Release\net5.0\Metotlar.genruntimeconfig.cache

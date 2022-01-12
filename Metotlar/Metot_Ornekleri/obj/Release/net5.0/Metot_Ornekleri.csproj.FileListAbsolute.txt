@@ -1,0 +1,16 @@
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\bin\Release\net5.0\Metot_Ornekleri.exe
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\bin\Release\net5.0\Metot_Ornekleri.deps.json
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\bin\Release\net5.0\Metot_Ornekleri.runtimeconfig.json
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\bin\Release\net5.0\Metot_Ornekleri.runtimeconfig.dev.json
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\bin\Release\net5.0\Metot_Ornekleri.dll
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\bin\Release\net5.0\ref\Metot_Ornekleri.dll
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\bin\Release\net5.0\Metot_Ornekleri.pdb
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\obj\Release\net5.0\Metot_Ornekleri.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\obj\Release\net5.0\Metot_Ornekleri.AssemblyInfoInputs.cache
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\obj\Release\net5.0\Metot_Ornekleri.AssemblyInfo.cs
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\obj\Release\net5.0\Metot_Ornekleri.csproj.CoreCompileInputs.cache
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\obj\Release\net5.0\Metot_Ornekleri.dll
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\obj\Release\net5.0\ref\Metot_Ornekleri.dll
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\obj\Release\net5.0\Metot_Ornekleri.pdb
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\obj\Release\net5.0\Metot_Ornekleri.genruntimeconfig.cache
+C:\Users\na\Desktop\NA-103-AKSAM\Metotlar\Metot_Ornekleri\obj\Release\net5.0\Metot_Ornekleri.csproj.AssemblyReference.cache
