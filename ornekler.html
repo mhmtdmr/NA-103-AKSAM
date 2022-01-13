@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Örnekler</title>
+    <style>
+        main 
+        {
+            background-color: bisque;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 5rem;
+            font-size: 2rem;
+        }
+        section.ornek
+        {
+            height: 500px;
+            /* width: 500px; */
+            margin: 10px;
+            background-color: rgb(96, 189, 124);
+            box-sizing: border-box;
+        }
+        section {padding: 2rem;}
+    </style>
+</head>
+<body>
+    <main>
+        <section class="ornek" id="ornek1">
+            <p>Örnek 1: 20 buton ekleme(fonksiyonları ile birlikte).</p>
+            <hr>
+            <section id="butonlar">
+
+            </section>
+
+            <script>
+                let butonSection = document.querySelector("section#ornek1 section#butonlar");
+                for(let i=1;i<=20;i++)
+                {
+                    var btn = "<button style='margin:5px;' onclick='sayiGoster("+i+")'>"+i+"</button>";
+                    butonSection.innerHTML += btn;
+
+                }
+                let sayiGoster = function(sayi)
+                {
+                    alert(sayi);
+                }
+            </script>
+        </section>
+
+
+        <section class="ornek" id="ornek2"></section>
+        <section class="ornek" id="ornek3"></section>
+        <section class="ornek" id="ornek4"></section>
+        <section class="ornek" id="ornek5"></section>
+        <section class="ornek" id="ornek6"></section>
+    </main>
+</body>
+</html>

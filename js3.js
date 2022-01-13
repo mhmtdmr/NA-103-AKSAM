@@ -32,8 +32,8 @@ let sayacArtir = function(artis=1)
     sayac = sayac+artis;
     sayacGoster.innerHTML = sayac;
 }   
-
-
 // Bir section içerisinde 20 tane buton tanımlayınız.
 // her buton
+
+"<button onclick='sayiGoster("+i+")') >"+i+"</button>"
 
