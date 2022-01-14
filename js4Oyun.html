@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="js4Oyun.css">
+    <title>Js 4 Oyun</title>
+    <script
+                  src="https://code.jquery.com/jquery-3.6.0.js"
+                  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+                  crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <section><p class="hideP" >1</p></section>
+        <section><p class="hideP" >2</p></section>
+        <section><p class="hideP" >3</p></section>
+        <section><p class="hideP" >4</p></section>
+        <section><p class="hideP" >5</p></section>
+        <section><p class="hideP" >1</p></section>
+        <section><p class="hideP" >2</p></section>
+        <section><p class="hideP" >3</p></section>
+        <section><p class="hideP" >4</p></section>
+        <section><p class="hideP" >5</p></section>
+    </main>
+    <script>
+        $(document).ready(function(){
+            // $("section p").hide();
+            let tiklamaSayisi = 0;
+            // alert("Çalışıyorum");
+            let s1 = Number();
+            let s2 = Number();
+            let s1element = null;
+            let s2element = null;
+
+            $("section").click(function()
+            {
+                tiklamaSayisi++;
+                if(tiklamaSayisi==1)
+                {
+                    $(this).children("p").show();
+                    s1 = $(this).children("p").text();
+                    s1element = $(this);
+                }
+                else if(tiklamaSayisi==2)
+                {
+                    tiklamaSayisi=0;
+                    $(this).children("p").show();
+                    s2 = $(this).children("p").text();
+                    s2element = $(this);
+                    if(s1==s2)
+                    {
+                        s1element.children("p").removeClass("hideP");
+                        s1element.children("p").addClass("showP");
+                        s2element.children("p").removeClass("hideP");
+                        s2element.children("p").addClass("showP");
+                    }
+                    var elementler = $('p.hideP').hide();
+                }
+                
+
+            });
+
+        });
+    </script>
+</body>
+</html>
