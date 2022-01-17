@@ -1,0 +1,16 @@
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\bin\Debug\net5.0\OOP2_Abstract.exe
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\bin\Debug\net5.0\OOP2_Abstract.deps.json
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\bin\Debug\net5.0\OOP2_Abstract.runtimeconfig.json
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\bin\Debug\net5.0\OOP2_Abstract.runtimeconfig.dev.json
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\bin\Debug\net5.0\OOP2_Abstract.dll
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\bin\Debug\net5.0\ref\OOP2_Abstract.dll
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\bin\Debug\net5.0\OOP2_Abstract.pdb
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\obj\Debug\net5.0\OOP2_Abstract.csproj.AssemblyReference.cache
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\obj\Debug\net5.0\OOP2_Abstract.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\obj\Debug\net5.0\OOP2_Abstract.AssemblyInfoInputs.cache
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\obj\Debug\net5.0\OOP2_Abstract.AssemblyInfo.cs
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\obj\Debug\net5.0\OOP2_Abstract.csproj.CoreCompileInputs.cache
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\obj\Debug\net5.0\OOP2_Abstract.dll
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\obj\Debug\net5.0\ref\OOP2_Abstract.dll
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\obj\Debug\net5.0\OOP2_Abstract.pdb
+C:\Users\na\Desktop\NA-103-AKSAM\OOP1\OOP2_Abstract\obj\Debug\net5.0\OOP2_Abstract.genruntimeconfig.cache
