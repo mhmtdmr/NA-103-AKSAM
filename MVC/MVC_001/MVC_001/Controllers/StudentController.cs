@@ -23,6 +23,16 @@ namespace MVC_001.Controllers
 
             return View(stdnt);// /Views/Student/Index.cshtml'i çalıştır.
         }
+        public ActionResult List()
+        {
+            List<Student> students = new List<Student>()
+            { 
+                new Student(){ID=1,Name="John",Surname="Doe" },
+                new Student(){ID=2,Name="Jane",Surname="Doe" }
+            };
+
+            return View(students);
+        }
 
         public ActionResult About()
         {
