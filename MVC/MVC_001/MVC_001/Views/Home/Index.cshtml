@@ -1,13 +1,82 @@
-﻿
-@{
+﻿@{
     Layout = "~/Views/Shared/_Layoutpage.cshtml";
+    string name = "Serdar";
+    string surname = "BUZAĞI";
+    int age = 25;
 }
 
+@if (TempData["exit"] != null)
+{ 
+    <section class="row">
+        <a class="bg-info alert">@TempData["exit"]</a>
+    </section>
+}
 
 @*Bu kısım RenderBody alanına gönderilecek.*@
-<h1>Index.cshtml</h1>
-<h1>Home controller da bulunan Index metodu isteğinizi bu sayfaya yönlendirdi.</h1>
-<h2><a href="/Home/About">ABOUT</a></h2>
+<section class="row">
+    <a class="alert bg-warning">Name : @name</a>
+    <a class="alert bg-warning">Surname : @surname</a>
+    <a class="alert bg-warning">Age : @age</a>
+</section>
+
+<section class="row">
+    @{ 
+            for(int i = 1;i<=6;i++)
+            {
+                <a class="col-md-1 bg-success p-2 m-2" style="border-radius:5px; display:inline;font-size:2rem;color:white;">
+                    @i
+                </a>
+            }
+
+        }
+</section>
+
+<section class="row">
+    <a class="col-md-3 p-2 m-2" style="display:inline; background-color:white;">
+        @ViewData["studentID"]
+    </a>
+    <a class="col-md-3 p-2 m-2" style="display: inline; background-color: white;">
+        @ViewData["studentName"]
+    </a>
+    <a class="col-md-3 p-2 m-2" style="display: inline; background-color: white;">
+        @ViewData["studentSurname"]
+    </a>
+
+    @*ViewData boş geldiyse html çıktısı olmasın !!!*@
+    @if( ViewData["studentAge"]!=null)
+    { 
+    <a class="col-md-3 p-2 m-2" style="display: inline; background-color: white;">
+        @ViewData["studentAge"]
+    </a>
+    }
+</section>
+<section class="row">
+    @if (ViewData["numbers"] != null)
+    {
+        List<int> sayilar = new List<int>();
+        sayilar = (List<int>)ViewData["numbers"];
+        foreach (var item in sayilar)
+        {
+            <a class="col-md-3 p-2 m-2" style="display: inline; background-color: white;">
+                @item
+            </a>
+        }
+
+    }
+</section>
+<section class="row">
+    @if (ViewBag.teacherID != null || ViewBag.teacherName != null)
+    {
+        <a class="col-md-3 p-2 m-2" style="display: inline; background-color: white;">
+            @ViewBag.teacherID
+        </a>
+        <a class="col-md-3 p-2 m-2" style="display: inline; background-color: white;">
+            @ViewBag.teacherName
+        </a>
+    }
+</section>
+
+
 
 
 @*Bu kısım sidebar kısmına gönderilecek.*@
@@ -23,7 +92,7 @@
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element.
                 </div>
             </div>
         </div>
@@ -35,7 +104,7 @@
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.
                 </div>
             </div>
         </div>
@@ -47,11 +116,11 @@
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    <strong>This is the third item's accordion body.</strong> It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 }
 
 
