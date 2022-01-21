@@ -20,5 +20,8 @@ namespace MVC_001.Models
         // 4) List: Kendisine liste olarak gelen(model) öğretmenleri listeleyecek. 
         // 5) Detail: 1 tane öğretmen nesnesine ait bilgileri listeleyecek.
         // 6) Yukarıdaki işlemler mümkün ise Html helper yapıları ile yazılacak.
+
+        // https://www.tutorialsteacher.com/mvc/html-helpers
+
     }
 }
