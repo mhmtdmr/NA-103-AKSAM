@@ -95,6 +95,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="DataAccess\DbTools.cs" />
+    <Compile Include="DataAccess\StudentDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -110,6 +112,8 @@
     <Content Include="Views\Shared\_LayoutPage.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Student\List.cshtml" />
+    <Content Include="Views\Student\Test.cshtml" />
+    <Content Include="Views\Student\Add.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
