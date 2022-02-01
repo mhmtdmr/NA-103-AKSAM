@@ -108,12 +108,13 @@
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Student\Index_Old.cshtml" />
     <Content Include="Views\Shared\_LayoutPage.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Student\List.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Student\Test.cshtml" />
     <Content Include="Views\Student\Add.cshtml" />
+    <Content Include="Views\Student\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

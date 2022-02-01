@@ -11,19 +11,19 @@ namespace MVC_001.Controllers
 {
     public class StudentController : Controller
     {        
+        //public ActionResult Index_Old()
+        //{   // model yolu ile View'e veri gönderme
+
+        //    Student stdnt = new Student()
+        //    {
+        //        ID = 99,
+        //        Name = "Burak",
+        //        Surname = "Yılmaz"
+        //    };
+
+        //    return View(stdnt);// /Views/Student/Index.cshtml'i çalıştır.
+        //}
         public ActionResult Index()
-        {   // model yolu ile View'e veri gönderme
-
-            Student stdnt = new Student()
-            {
-                ID = 99,
-                Name = "Burak",
-                Surname = "Yılmaz"
-            };
-
-            return View(stdnt);// /Views/Student/Index.cshtml'i çalıştır.
-        }
-        public ActionResult List()
         {
             List<Student> students = StudentDAL.Methods.List();
 
@@ -47,6 +47,21 @@ namespace MVC_001.Controllers
         {
             
             TempData["insertedID"] = StudentDAL.Methods.Add(student);
+            return RedirectToAction("Index");
+        }
+        public ActionResult Edit(int id)
+        {
+            return View(StudentDAL.Methods.GetByID(id));
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Student student)
+        {
+            int affectedRows = StudentDAL.Methods.Update(student);
+            if (affectedRows > 0)
+                TempData["editmessage"] = "Edit successfull!!!";
+            else    
+                TempData["editmessage"] = "Error on edit!!!";
             return RedirectToAction("Index");
         }
     }

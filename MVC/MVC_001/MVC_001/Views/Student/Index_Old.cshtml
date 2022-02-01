@@ -1,0 +1,26 @@
+﻿@*Sana model ile gelen nesne bir Student nesnesidir.*@
+@model MVC_001.Models.Student
+
+@if (TempData["insertedID"] != null)
+{
+<section class="alert alert-success">
+    @TempData["insertedID"]
+</section>
+}
+
+
+
+@if (Model != null)
+{
+<section class="row p-3">
+    <a class="col-md-3 p-2 m-2" style="display: inline; background-color: white;">
+        @Model.ID
+    </a>
+    <a class="col-md-3 p-2 m-2" style="display: inline; background-color: white;">
+        @Model.Name
+    </a>
+    <a class="col-md-3 p-2 m-2" style="display: inline; background-color: white;">
+        @Model.Surname
+    </a>
+</section>
+}

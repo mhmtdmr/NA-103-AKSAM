@@ -81,9 +81,23 @@ namespace MVC_001.DataAccess
                 // Hata Logu yaz
             }
             return insertedID;
-
-
-
+        }
+        public int Execute(SqlCommand cmd)
+        {
+            int affectedRows = 0;
+            try
+            {
+                if (ConnectDB())
+                {
+                    affectedRows = cmd.ExecuteNonQuery();
+                    DisconnectDB();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            return affectedRows;
         }
     }
 }

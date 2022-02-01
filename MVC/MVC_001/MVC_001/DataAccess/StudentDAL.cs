@@ -35,6 +35,11 @@ namespace MVC_001.DataAccess
         public List<Student> List()
         {
             string query = $"SELECT * FROM Student;";
+            return GetStudentList(query);
+        }
+
+        private static List<Student> GetStudentList(string query)
+        {
             SqlCommand cmd = new SqlCommand(query, DbTools.dbConnection);
             List<Student> studentList = new List<Student>();
             IDataReader reader;
@@ -42,20 +47,49 @@ namespace MVC_001.DataAccess
             {
                 DbTools.Methods.ConnectDB();
                 reader = cmd.ExecuteReader();
-                while(reader.Read())
+                while (reader.Read())
                 {
                     studentList.Add(
-                    new Student() {
+                    new Student()
+                    {
+                        ID = reader.GetInt32(0),
                         Name = reader["Name"].ToString(),
-                        Surname = reader["Surname"].ToString() });
+                        Surname = reader["Surname"].ToString()
+                    });
                 }
                 DbTools.Methods.DisconnectDB();
             }
             catch
             {
-                // Log dosyasına yaz.
+                throw;
             }
             return studentList;
+        }
+
+        public Student GetByID(int id)
+        {
+            string query = $"SELECT * FROM Student WHERE ID={id};";
+            try
+            {
+                return GetStudentList(query)[0];
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+
+        public int Update(Student student)
+        {
+            string query = $"UPDATE Student SET Name=@name,Surname=@surname WHERE ID=@id;";
+            SqlCommand cmd = new SqlCommand(query, DbTools.dbConnection);
+            cmd.Parameters.AddWithValue("@name", student.Name);
+            cmd.Parameters.AddWithValue("@surname", student.Surname);
+            cmd.Parameters.AddWithValue("@id", student.ID);
+            return DbTools.Methods.Execute(cmd);
+
         }
     }
 }
