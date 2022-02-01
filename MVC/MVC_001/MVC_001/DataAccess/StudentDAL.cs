@@ -103,8 +103,9 @@ namespace MVC_001.DataAccess
 
         public List<Student> Search(string searchterm)
         {
-            string query = $"SELECT * FROM Student WHERE Name LIKE '%{searchterm}%' OR Surname LIKE '%{searchterm}%';";
+            string query = $"SELECT * FROM Student WHERE Name LIKE '%' + @searchterm + '%' OR Surname LIKE '%' + @searchterm + '%';";
             SqlCommand cmd = new SqlCommand(query, DbTools.dbConnection);
+            cmd.Parameters.AddWithValue("@searchterm", searchterm);
             try
             {
                 return GetStudentList(cmd);
