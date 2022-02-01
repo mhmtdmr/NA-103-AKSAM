@@ -64,5 +64,34 @@ namespace MVC_001.Controllers
                 TempData["editmessage"] = "Error on edit!!!";
             return RedirectToAction("Index");
         }
+
+        public ActionResult Details(int id)
+        {
+            return View(StudentDAL.Methods.GetByID(id));
+        }
+
+
+        public ActionResult Delete(int id)
+        {
+            return View(StudentDAL.Methods.GetByID(id));
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Student student)
+        {
+            int affectedRows = StudentDAL.Methods.Delete(student.ID);
+            if (affectedRows > 0)
+                TempData["deletemessage"] = "Delete successfull!!!";
+            else
+                TempData["deletemessage"] = "Error on delete!!!";
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Index(string searchterm)
+        {
+            List<Student> searchedStudents = StudentDAL.Methods.Search(searchterm);
+            return View(searchedStudents);
+        }
     }
 }

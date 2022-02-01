@@ -35,12 +35,12 @@ namespace MVC_001.DataAccess
         public List<Student> List()
         {
             string query = $"SELECT * FROM Student;";
-            return GetStudentList(query);
+            SqlCommand cmd = new SqlCommand(query, DbTools.dbConnection);
+            return GetStudentList(cmd);
         }
 
-        private static List<Student> GetStudentList(string query)
+        private static List<Student> GetStudentList(SqlCommand cmd)
         {
-            SqlCommand cmd = new SqlCommand(query, DbTools.dbConnection);
             List<Student> studentList = new List<Student>();
             IDataReader reader;
             try
@@ -68,10 +68,12 @@ namespace MVC_001.DataAccess
 
         public Student GetByID(int id)
         {
-            string query = $"SELECT * FROM Student WHERE ID={id};";
+            string query = $"SELECT * FROM Student WHERE ID=@id;";
+            SqlCommand cmd = new SqlCommand(query, DbTools.dbConnection);
+            cmd.Parameters.AddWithValue("@id", id);
             try
             {
-                return GetStudentList(query)[0];
+                return GetStudentList(cmd)[0];
             }
             catch (Exception)
             {
@@ -91,5 +93,27 @@ namespace MVC_001.DataAccess
             return DbTools.Methods.Execute(cmd);
 
         }
+        public int Delete(int id)
+        {
+            string query = $"DELETE FROM Student WHERE ID=@id;";
+            SqlCommand cmd = new SqlCommand(query, DbTools.dbConnection);
+            cmd.Parameters.AddWithValue("@id", id);
+            return DbTools.Methods.Execute(cmd);
+        }
+
+        public List<Student> Search(string searchterm)
+        {
+            string query = $"SELECT * FROM Student WHERE Name LIKE '%{searchterm}%' OR Surname LIKE '%{searchterm}%';";
+            SqlCommand cmd = new SqlCommand(query, DbTools.dbConnection);
+            try
+            {
+                return GetStudentList(cmd);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
     }
 }

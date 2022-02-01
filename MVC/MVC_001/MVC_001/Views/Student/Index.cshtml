@@ -3,10 +3,16 @@
 @{
     ViewBag.Title = "Öğrenci Listeleme";
 }
-@if (TempData["editmessage"]!= null)
-{ 
+@if (TempData["editmessage"] != null)
+{
     <section class="alert alert-info">
         @TempData["editmessage"]
+    </section>
+}
+@if (TempData["deletemessage"] != null)
+{
+    <section class="alert alert-danger">
+        @TempData["deletemessage"]
     </section>
 }
 <section class="p-4">
@@ -53,9 +59,9 @@
 
                 </td>
                 <td>
-                    @Html.ActionLink(linkText:"Edit",actionName:"Edit",controllerName:"Student",routeValues:new { id=item.ID }, htmlAttributes:new {@class="btn btn-success" }) |
-                    @Html.ActionLink(linkText:"Details", actionName:"Details", controllerName: "Student", routeValues: new { id = item.ID }, htmlAttributes: new { @class = "btn btn-light" }) |
-                    @Html.ActionLink(linkText:"Delete", actionName:"Delete", controllerName: "Student", routeValues: new { id = item.ID }, htmlAttributes: new { @class = "btn btn-danger" })
+                    @Html.ActionLink(linkText: "Edit", actionName: "Edit", controllerName: "Student", routeValues: new { id = item.ID }, htmlAttributes: new { @class = "btn btn-success" }) |
+                    @Html.ActionLink(linkText: "Details", actionName: "Details", controllerName: "Student", routeValues: new { id = item.ID }, htmlAttributes: new { @class = "btn btn-light" }) |
+                    @Html.ActionLink(linkText: "Delete", actionName: "Delete", controllerName: "Student", routeValues: new { id = item.ID }, htmlAttributes: new { @class = "btn btn-danger" })
                 </td>
             </tr>
         }

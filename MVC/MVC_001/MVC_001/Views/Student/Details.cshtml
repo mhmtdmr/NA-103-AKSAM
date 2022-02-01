@@ -1,0 +1,37 @@
+﻿@model MVC_001.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-success" }) |
+    @Html.ActionLink("Student Home", "Index", null, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink(linkText: "Delete", actionName: "Delete", controllerName: "Student", routeValues: new { id = Model.ID }, htmlAttributes: new { @class = "btn btn-danger" })
+
+</p>
