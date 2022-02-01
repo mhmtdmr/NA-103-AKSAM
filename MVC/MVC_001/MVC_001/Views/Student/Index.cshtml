@@ -17,13 +17,17 @@
 }
 <section class="p-4">
     <p>
-        <!--@Html.ActionLink("Create New","Create")-->
-        @*<a href="/Student/Create">Create New</a>*@
+        @if (Response.Cookies.AllKeys.Contains("userlogin"))
+        {
+            @Html.ActionLink(linkText: "Add Student", actionName: "Add", controllerName: "Student", htmlAttributes: new { @class = "btn btn-success" }, routeValues: new { })
+            @*<a class="btn btn-success" href="/Student/Create">Create New</a>*@
+        }
+
+        @*@Html.ActionLink("Create New", "Create")*@
 
 
 
-        @Html.ActionLink(linkText: "Add Student", actionName: "Add", controllerName: "Student", htmlAttributes: new { @class = "btn btn-success" }, routeValues: new { })
-        @*<a class="btn btn-success" href="/Student/Create">Create New</a>*@
+
     </p>
     <table class="table">
         <tr>

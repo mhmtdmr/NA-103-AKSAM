@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using MVC_001.DataAccess;
 
 using MVC_001.Models;   // Models altındaki sınıfları kullanacağız.
@@ -35,7 +36,10 @@ namespace MVC_001.Controllers
             return RedirectToAction("Index"); // Yukarıdaki Index controller'ına yönlendir.
         }
 
+
         // Yeni öğrenci kayıt formunu göster.
+        
+        [Authorize]
         public ActionResult Add()
         {
             Student newStudent = new Student();
@@ -70,7 +74,7 @@ namespace MVC_001.Controllers
             return View(StudentDAL.Methods.GetByID(id));
         }
 
-
+        [Authorize]
         public ActionResult Delete(int id)
         {
             return View(StudentDAL.Methods.GetByID(id));
@@ -92,6 +96,19 @@ namespace MVC_001.Controllers
         {
             List<Student> searchedStudents = StudentDAL.Methods.Search(searchterm);
             return View(searchedStudents);
+        }
+
+
+        public ActionResult Login(string returnUrl="/Student/Index")
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(string email, string password,string returnUrl)
+        {
+            FormsAuthentication.SetAuthCookie("userlogin", false);
+            return Redirect(returnUrl);
         }
     }
 }
