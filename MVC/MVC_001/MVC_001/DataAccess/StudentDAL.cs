@@ -54,7 +54,10 @@ namespace MVC_001.DataAccess
                     {
                         ID = reader.GetInt32(0),
                         Name = reader["Name"].ToString(),
-                        Surname = reader["Surname"].ToString()
+                        Surname = reader["Surname"].ToString(),
+                        Email = reader["Email"].ToString(),
+                        Password = reader["Password"].ToString(),
+                        RoleID = int.Parse(reader["RoleID"].ToString())
                     });
                 }
                 DbTools.Methods.DisconnectDB();
@@ -71,6 +74,20 @@ namespace MVC_001.DataAccess
             string query = $"SELECT * FROM Student WHERE ID=@id;";
             SqlCommand cmd = new SqlCommand(query, DbTools.dbConnection);
             cmd.Parameters.AddWithValue("@id", id);
+            try
+            {
+                return GetStudentList(cmd)[0];
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public Student Login(string email,string password)
+        {
+            string query = $"SELECT * FROM Student WHERE Email='{email}' AND Password='{password}'"; ;
+            SqlCommand cmd = new SqlCommand(query, DbTools.dbConnection);
+            // Addwithvalue eklenecek.
             try
             {
                 return GetStudentList(cmd)[0];

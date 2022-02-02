@@ -5,8 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using MVC_001.DataAccess;
-
+using MVC_001.ModelBase;
 using MVC_001.Models;   // Models altındaki sınıfları kullanacağız.
+using MVC_001.Security;
 
 namespace MVC_001.Controllers
 {
@@ -39,7 +40,7 @@ namespace MVC_001.Controllers
 
         // Yeni öğrenci kayıt formunu göster.
         
-        [Authorize]
+        [CustomAuthorize(Roles="teacher")]
         public ActionResult Add()
         {
             Student newStudent = new Student();
@@ -104,10 +105,20 @@ namespace MVC_001.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
+
         [HttpPost]
         public ActionResult Login(string email, string password,string returnUrl)
         {
-            FormsAuthentication.SetAuthCookie("userlogin", false);
+            Student std = StudentDAL.Methods.Login(email, password);
+            //FormsAuthentication.SetAuthCookie("userlogin", false);
+            Role rl = std.Role;
+            
+            if(std.ID==0) // nesne boş ise
+            {
+                ViewBag.Error = "Login failed.";
+                return View("Login");
+            }
+            SessionPersister.Email = std.Email;
             return Redirect(returnUrl);
         }
     }

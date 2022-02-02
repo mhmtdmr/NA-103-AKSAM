@@ -96,12 +96,20 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="DataAccess\DbTools.cs" />
+    <Compile Include="DataAccess\RoleDAL.cs" />
     <Compile Include="DataAccess\StudentDAL.cs" />
+    <Compile Include="DataAccess\UserDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ModelBase\Role.cs" />
+    <Compile Include="ModelBase\User.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Security\CustomPrincipal.cs" />
+    <Compile Include="Security\RoleLevelAuthorizeAttribute.cs" />
+    <Compile Include="Security\SessionPersistor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
