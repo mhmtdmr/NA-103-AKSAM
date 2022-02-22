@@ -7,13 +7,13 @@ namespace EF_CodeFisrt_01.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class m2_expiration_added : IMigrationMetadata
+    public sealed partial class m1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(m2_expiration_added));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(m1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202202211654519_m2_expiration_added"; }
+            get { return "202202221330126_m1"; }
         }
         
         string IMigrationMetadata.Source

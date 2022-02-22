@@ -128,20 +128,22 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202211641288_m1_CreateDB_AddProductTable.cs" />
-    <Compile Include="Migrations\202202211641288_m1_CreateDB_AddProductTable.Designer.cs">
-      <DependentUpon>202202211641288_m1_CreateDB_AddProductTable.cs</DependentUpon>
+    <Compile Include="Migrations\202202221330126_m1.cs" />
+    <Compile Include="Migrations\202202221330126_m1.Designer.cs">
+      <DependentUpon>202202221330126_m1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202211654519_m2_expiration_added.cs" />
-    <Compile Include="Migrations\202202211654519_m2_expiration_added.Designer.cs">
-      <DependentUpon>202202211654519_m2_expiration_added.cs</DependentUpon>
+    <Compile Include="Migrations\202202221629062_m2.cs" />
+    <Compile Include="Migrations\202202221629062_m2.Designer.cs">
+      <DependentUpon>202202221629062_m2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -182,11 +184,19 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Create_old.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Filter_Single.cshtml" />
+    <Content Include="Views\Product\Filter.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -205,11 +215,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202202211641288_m1_CreateDB_AddProductTable.resx">
-      <DependentUpon>202202211641288_m1_CreateDB_AddProductTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202221330126_m1.resx">
+      <DependentUpon>202202221330126_m1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202211654519_m2_expiration_added.resx">
-      <DependentUpon>202202211654519_m2_expiration_added.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202221629062_m2.resx">
+      <DependentUpon>202202221629062_m2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

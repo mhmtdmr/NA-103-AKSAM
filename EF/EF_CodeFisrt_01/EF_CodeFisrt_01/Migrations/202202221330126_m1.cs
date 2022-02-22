@@ -3,7 +3,7 @@ namespace EF_CodeFisrt_01.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class m1_CreateDB_AddProductTable : DbMigration
+    public partial class m1 : DbMigration
     {
         public override void Up()
         {
@@ -16,6 +16,7 @@ namespace EF_CodeFisrt_01.Migrations
                         Description = c.String(),
                         Price = c.Double(nullable: false),
                         UnitsInStock = c.Int(nullable: false),
+                        Expiration = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
             

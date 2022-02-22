@@ -81,6 +81,6 @@ C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\D
 C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.csproj.CopyComplete
 C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.dll
 C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.pdb
-C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.Migrations.m1_CreateDB_AddProductTable.resources
+C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.Migrations.m1.resources
 C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.csproj.GenerateResource.cache
-C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.Migrations.m2_expiration_added.resources
+C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.Migrations.m2.resources

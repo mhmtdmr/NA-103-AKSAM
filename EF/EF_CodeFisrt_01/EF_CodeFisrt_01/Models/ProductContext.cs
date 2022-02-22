@@ -13,5 +13,7 @@ namespace EF_CodeFisrt_01.Models
         }
 
         public virtual DbSet<Product> Products { get; set; }
+
+        public System.Data.Entity.DbSet<EF_CodeFisrt_01.Models.Category> Categories { get; set; }
     }
 }

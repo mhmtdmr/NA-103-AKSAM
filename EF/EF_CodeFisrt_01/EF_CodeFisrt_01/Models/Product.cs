@@ -13,5 +13,6 @@ namespace EF_CodeFisrt_01.Models
         public double Price { get; set; }
         public int UnitsInStock { get; set; }
         public DateTime Expiration { get; set; }
+        public Category Category { get; set; }
     }
 }

@@ -7,13 +7,13 @@ namespace EF_CodeFisrt_01.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class m1_CreateDB_AddProductTable : IMigrationMetadata
+    public sealed partial class m2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(m1_CreateDB_AddProductTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(m2));
         
         string IMigrationMetadata.Id
         {
-            get { return "202202211641288_m1_CreateDB_AddProductTable"; }
+            get { return "202202221629062_m2"; }
         }
         
         string IMigrationMetadata.Source

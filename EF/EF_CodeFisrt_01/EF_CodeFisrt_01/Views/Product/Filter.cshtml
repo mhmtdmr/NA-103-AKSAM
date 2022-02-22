@@ -1,0 +1,80 @@
+﻿@model IEnumerable<EF_CodeFisrt_01.Models.Product>
+
+@{
+    ViewBag.Title = "Filter";
+}
+
+<h2>Filter</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitsInStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Expiration)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitsInStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Expiration)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+<h3>Ürün Adları</h3>
+<hr />
+@foreach (var item in ViewBag.urunAdlari)
+{
+    <h5>@item</h5>
+}
+<hr />
+<p>Cips var mı: @ViewBag.cipsVarMi</p>
+<hr />
+<p>Tüm ürünlerin stoğu var mı: @ViewBag.tumUrunlerStoktaVarMi</p>
+<hr />
+<p>Kaç farklı ürün var : @ViewBag.UrunCesitSayisi</p>
+<hr />
+<p>20 den pahalı ürün adedi: @ViewBag.urun20denPahali</p>
+<hr />
+<p>En ucuz ürün fiyatı: @ViewBag.enucuz </p>
+<p>En pahali ürün fiyatı: @ViewBag.enpahali </p>
+<p>Ortalama fiyat: @ViewBag.ortalamafiyat </p>
+<hr />
+<p>Son ürün : @ViewBag.sonurun.Name </p>
+<hr />
+<p>Yumurta fiyatı : @ViewBag.yumurta.Price </p>
