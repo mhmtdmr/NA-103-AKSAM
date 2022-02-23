@@ -1,0 +1,9 @@
+{
+  "username": "mehmet",
+  "password": "Parola123",
+  "yas": 33,
+  "adres": {
+    "þehir": "Ýstanbul",
+    "ilçe": "Sarýyer"
+  }
+}

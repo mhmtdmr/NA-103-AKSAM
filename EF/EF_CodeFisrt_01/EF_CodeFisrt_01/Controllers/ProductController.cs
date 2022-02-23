@@ -38,7 +38,15 @@ namespace EF_CodeFisrt_01.Controllers
         // GET: Product/Create
         public ActionResult Create()
         {
-            ViewBag.categories = db.Categories.ToList();
+
+            List<SelectListItem> categories = db.Categories.ToList().OrderBy(n => n.Name)
+                .Select(n =>
+                        new SelectListItem
+                        {
+                            Value = n.ID.ToString(),
+                            Text = n.Name
+                        }).ToList();
+            ViewBag.categories = categories;
             return View();
         }
 
@@ -47,7 +55,7 @@ namespace EF_CodeFisrt_01.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Description,Price,UnitsInStock,Expiration")] Product product)
+        public ActionResult Create([Bind(Include = "ID,Name,Description,Price,UnitsInStock,Expiration,CategoryID")] Product product)
         {
             if (ModelState.IsValid)
             {

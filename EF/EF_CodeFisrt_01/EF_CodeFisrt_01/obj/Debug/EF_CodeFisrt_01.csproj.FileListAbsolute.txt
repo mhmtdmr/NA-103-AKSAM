@@ -1,3 +1,7 @@
+C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.Migrations.m1.resources
+C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.Migrations.m2.resources
+C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.csproj.GenerateResource.cache
+C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.csproj.CoreCompileInputs.cache
 C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\bin\EF_CodeFisrt_01.dll.config
 C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\bin\EF_CodeFisrt_01.dll
 C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\bin\EF_CodeFisrt_01.pdb
@@ -76,11 +80,8 @@ C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\bin\S
 C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\bin\Newtonsoft.Json.xml
 C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\bin\Antlr3.Runtime.pdb
 C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.csproj.AssemblyReference.cache
-C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.csproj.CoreCompileInputs.cache
 C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.csproj.CopyComplete
 C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.dll
 C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.pdb
-C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.Migrations.m1.resources
-C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.csproj.GenerateResource.cache
-C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.Migrations.m2.resources
+C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.csproj.AssemblyReference.cache
+C:\Users\ogretmen1\Desktop\NA-103-AKSAM\EF\EF_CodeFisrt_01\EF_CodeFisrt_01\obj\Debug\EF_CodeFisrt_01.Migrations.m8.resources
