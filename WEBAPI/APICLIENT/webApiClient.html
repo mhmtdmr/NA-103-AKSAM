@@ -1,36 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Web Api Client</title>
 </head>
+
 <body>
     <main>
-        <div class="col-lg-3">
-            <a id="btngetallcars" class="btn btn-success">Get All Cars</a>
-            <div id="divallcars" class="alert alert-info"></div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="bg-info p-5 m-2" style="border-radius: 5px;">
+                    <h5 class="alert alert-info">Show Car/Cars</h5>
+                    <a id="btngetallcars" class="form form-control btn btn-light my-2">Get All Cars</a>
+                    <div id="divallcars" class="alert alert-info"></div>
+
+                    <form>
+                        <input class="form form-control" type="number" id="carid" name="carid"
+                            placeholder="enter car id" />
+                    </form>
+                    <a id="btngetcar" class="form form-control btn btn-light" style="margin: 10px 0;">Get The Car</a>
+                    <div id="divcar" class="alert alert-info"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-3  col-md-6">
+                <div class="bg-warning p-5 m-2" style="border-radius: 5px;">
+                    <h5 class="alert alert-info">Delete The Car</h5>
+                    <form>
+                        <input class="form form-control my-2" type="number" id="cariddelete" name="cariddelete"
+                            placeholder="enter car id to delete" />
+                    </form>
+                    <a id="btndeletecar" class="my-2 btn btn-danger form form-control">Delete The Car</a>
+                    <div id="divdeletecar" class="my-2 alert alert-info"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-3  col-md-6">
+                <div class="bg-primary p-5 m-2" style="border-radius: 5px;">
+                    <h5 class="alert alert-info">Update The Car</h5>
+                    <form>
+                        <select id="updatecar"  class="form form-control">
+                            <option class="form form-control" value="0">Select Car</option>
+                        </select>
+                        <input class="form form-control my-2" type="text" id="updatebrand" name="updatebrand" />
+                        <input class="form form-control my-2" type="text" id="updatemodel" name="updatemodel" />
+                        <input class="form form-control my-2" type="number" id="updateenginesize" name="updateenginesize" />
+                    </form>
+                    <a id="btnupdatecar" class="my-2 btn btn-success form form-control">Update The Car</a>
+                    <div id="divupdatecar" class="my-2 alert alert-info"></div>
+                </div>
+            </div>
         </div>
     </main>
 
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
 
             var btngetallcars = $("#btngetallcars");
             var divallcars = $("#divallcars");
+            divallcars.hide();
+
+            var btngetcar = $("#btngetcar");
+            var divcar = $("#divcar");
+            divcar.hide();
+
+            var btndeletecar = $("#btndeletecar");
+            var divdeletecar = $("#divdeletecar");
+            $("#divdeletecar").hide();
+            FillUpdateSelect();
 
 
-            btngetallcars.click(function () {  
-                console.log("OK")
-                GetAllCars();
-            });
 
-            function GetAllCars()
+            function FillUpdateSelect()
             {
                 var apiurl = "https://localhost:5001/api/Car";
                 $.ajax({
@@ -40,19 +91,137 @@
                     encode:true,
                     async:false,
                     success: function (response) {
-                        // console.log(response);
-                        var html = "";
+                        var html = "<option value='0'>Select Car</option>";
                         response.forEach(item => {
-                            // var obj = JSON.parse(item);
-                            html += "<br>"+item;       
+                            html += "<option data-brand='"+item.brand+ "' data-model='"+item.model+"' data-enginesize='"+item.engineSize + "' value="+item.id+">"+item.brand +" "+item.model+"</option>"    
                         }); // hata çözülecek.
-                        divallcars.html(html);
+                        $("#updatecar").html(html);
                     }
                 });
             };
+
+            $("#updatecar").change(function () {  
+                
+                var selected = $("#updatecar").find(":selected");
+                // console.log(selected.data('brand'))
+                $("#updatebrand").val(selected.data('brand'));
+                $("#updatemodel").val(selected.data('model'));
+                $("#updateenginesize").val(selected.data('enginesize'));
+            });
+
+            $("#btnupdatecar").click(function () {  
+                var selected = $("#updatecar").find(":selected");
+                let updatedData = {
+                    "id": selected.val(),
+                    "brand": $("#updatebrand").val(),
+                    "model": $("#updatemodel").val(),
+                    "engineSize": $("#updateenginesize").val()
+                    };
+                console.log(updatedData);
+
+                var apiurl = "https://localhost:5001/api/Car";
+                $.ajax({
+                    type: "PUT",
+                    url: apiurl,
+                    // dataType: "json",
+                    contentType:"application/json",
+                    encode:true,
+                    async:false,
+                    data:JSON.stringify(updatedData),
+                    success: function (response) {
+                        console.log(response); 
+                        FillUpdateSelect();
+                    }
+                });
+            });
+
+
+
+            function GetCar() {
+                let carid = $("#carid").val();  // form elementinde value yu döndürür.
+                console.log(carid);
+                // let carid = $("#carid").html(); // <a>asdasd</a>
+                // let carid = $("#carid").text(); // asdasd
+                var apiurl = "https://localhost:5001/api/Car/" + carid;
+                console.log(apiurl);
+                $.ajax({
+                    type: "GET",
+                    url: apiurl,
+                    dataType: "json",
+                    encode: true,
+                    async: false,
+                    success: function (response) {
+                        var html = "";
+                        response.forEach(item => {
+                            html += item.brand + " " + item.model + " " + item.engineSize + "<br>";
+                        });
+                        if (carid > 0) {
+                            divcar.html(html);
+                            divcar.show();
+                        }
+                        else {
+                            divallcars.html(html);
+                            divallcars.show();
+                        }
+                    }
+                });
+            };
+
+            $("#divallcars").click(function () {
+                $("#divallcars").toggle();
+            });
+            $("#divcar").click(function () {
+                $("#divcar").toggle();
+            });
+            $("#divdeletecar").click(function () {
+                $("#divdeletecar").toggle();
+            });
+
+            btngetcar.click(function () {
+                GetCar();
+            });
+
+            btngetallcars.click(function () {
+                // console.log("OK")
+                // GetAllCars();
+                GetCar();
+            });
+
+
+            btndeletecar.click(function () {
+                let deletecarid = $("#cariddelete").val();
+                let message = String(deletecarid) + " numaralı aracı silmek istediğinizden emin misini?"
+                let answer = confirm(message);
+                if (answer == true) 
+                {
+                    var apiurl = "https://localhost:5001/api/Car/" + deletecarid;
+                    $.ajax({
+                        type: "DELETE",
+                        url: apiurl,
+                        dataType: "json",
+                        encode: true,
+                        async: false,
+                        success: function (response) {
+                            console.log(response);
+                            console.log(typeof response);
+                            // divdeletecar.html(html);
+                        },
+                        error: function (response) {
+                            divdeletecar.html(response.responseText);
+                            $("#divdeletecar").show();
+                        }
+                    });
+                }
+                else
+                {
+                    divdeletecar.html("Araç silinmedi!");
+                }
+
+            });
 
 
         });
     </script>
 </body>
+
 </html>
