@@ -14,7 +14,7 @@
     <main>
         <div class="row">
             <div class="col-lg-3 col-md-6">
-                <div class="bg-info p-5 m-2" style="border-radius: 5px;">
+                <div class="bg-info p-5 m-2" style="border-radius: 5px; border: 5px solid greenyellow">
                     <h5 class="alert alert-info">Show Car/Cars</h5>
                     <a id="btngetallcars" class="form form-control btn btn-light my-2">Get All Cars</a>
                     <div id="divallcars" class="alert alert-info"></div>
@@ -29,7 +29,7 @@
             </div>
 
             <div class="col-lg-3  col-md-6">
-                <div class="bg-warning p-5 m-2" style="border-radius: 5px;">
+                <div class="bg-warning p-5 m-2" style="border-radius: 5px; border: 5px solid red">
                     <h5 class="alert alert-info">Delete The Car</h5>
                     <form>
                         <input class="form form-control my-2" type="number" id="cariddelete" name="cariddelete"
@@ -41,7 +41,7 @@
             </div>
 
             <div class="col-lg-3  col-md-6">
-                <div class="bg-primary p-5 m-2" style="border-radius: 5px;">
+                <div class="bg-primary p-5 m-2" style="border-radius: 5px; border: 5px solid greenyellow">
                     <h5 class="alert alert-info">Update The Car</h5>
                     <form>
                         <select id="updatecar"  class="form form-control">
@@ -53,6 +53,24 @@
                     </form>
                     <a id="btnupdatecar" class="my-2 btn btn-success form form-control">Update The Car</a>
                     <div id="divupdatecar" class="my-2 alert alert-info"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-3  col-md-6">
+                <div class="bg-success p-5 m-2" style="border-radius: 5px; border: 5px solid burlywood">
+                    <h5 class="alert alert-info">Add Car</h5>
+                    <form>
+                        <label for="addid" class="form form-control my-2">ID</label>
+                        <input class="form form-control my-2" type="text" id="addid" name="addid" />
+                        <label for="addbrand" class="form form-control my-2">Brand</label>
+                        <input class="form form-control my-2" type="text" id="addbrand" name="addbrand" />
+                        <label for="addmodel" class="form form-control my-2">Model</label>
+                        <input class="form form-control my-2" type="text" id="addmodel" name="addmodel" />
+                        <label for="addenginesize" class="form form-control my-2">Engine Size</label>
+                        <input class="form form-control my-2" type="number" id="addenginesize" name="addenginesize" />
+                    </form>
+                    <a id="btnaddcar" class="my-2 btn btn-primary form form-control">Add Car</a>
+                    <div id="divaddcar" class="my-2 alert alert-info"></div>
                 </div>
             </div>
         </div>
@@ -77,7 +95,13 @@
             var btndeletecar = $("#btndeletecar");
             var divdeletecar = $("#divdeletecar");
             $("#divdeletecar").hide();
+
+            var divupdatecar = $("#divupdatecar");
+            divupdatecar.hide();
             FillUpdateSelect();
+
+            var divaddcar = $("#divaddcar");
+            divaddcar.hide();
 
 
 
@@ -131,6 +155,8 @@
                     success: function (response) {
                         console.log(response); 
                         FillUpdateSelect();
+                        divupdatecar.html("Araç Güncellendi");
+                        divupdatecar.show();  
                     }
                 });
             });
@@ -176,6 +202,13 @@
             $("#divdeletecar").click(function () {
                 $("#divdeletecar").toggle();
             });
+            $("#divupdatecar").click(function () {
+                $("#divupdatecar").toggle();
+            });
+            $("#divaddcar").click(function () {
+                $("#divaddcar").toggle();
+            });
+            
 
             btngetcar.click(function () {
                 GetCar();
@@ -190,7 +223,7 @@
 
             btndeletecar.click(function () {
                 let deletecarid = $("#cariddelete").val();
-                let message = String(deletecarid) + " numaralı aracı silmek istediğinizden emin misini?"
+                let message = String(deletecarid) + " numaralı aracı silmek istediğinizden emin misiniz?"
                 let answer = confirm(message);
                 if (answer == true) 
                 {
@@ -217,6 +250,40 @@
                     divdeletecar.html("Araç silinmedi!");
                 }
 
+            });
+
+            $("#btnaddcar").click(function () {   
+                let addData = {
+                    "id": $("#addid").val(),
+                    "brand": $("#addbrand").val(),
+                    "model": $("#addmodel").val(),
+                    "engineSize": $("#addenginesize").val()
+                    };
+                
+                let message ="Aracı eklemek istediğinizden emin misiniz?"
+                let answer = confirm(message);
+                if (answer == true) 
+                {
+                    var apiurl = "https://localhost:5001/api/Car";
+                    $.ajax({
+                        type: "POST",
+                        url: apiurl,
+                        contentType:"application/json",
+                        encode:true,
+                        async:false,
+                        data:JSON.stringify(addData),
+                        success: function (response) {
+                            $('#divaddcar').html("Araç eklendi !");
+                            $("#divaddcar").show();
+                            
+                        }
+                    });
+                }
+                else
+                {
+                    divaddcar.html("Araç eklenmedi !");
+                    divaddcar.show();
+                }
             });
 
 
